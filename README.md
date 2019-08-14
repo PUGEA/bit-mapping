@@ -1,11 +1,10 @@
 # Bit-mapping
-
 This is a experimental tool for mapping reads to the transcriptome implemented by C++ in Linux.
----
+
 ## Introduction
 
 Bit-mapping accelerates mapping speed by reducing the dimension of the reads. It uses learning to hash algorithm, spherical hashing, to compute the binary hash codes of reads, and map reads to the transcriptome by their hash codes rather than the original data.
----
+
 ## Installation
 
 Just cloning or downloading this respository, and compile it by
@@ -21,7 +20,7 @@ Just cloning or downloading this respository, and compile it by
 -openmp
 
 Please ensure they are installed in your machine before installing bit-mapping.
----
+
 ## Useage
 
 There are several important parameters in bit-mapping:
