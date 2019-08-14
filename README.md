@@ -61,34 +61,35 @@ The reference transcriptome used in this example is [homo_sapiens](ftp://ftp.ens
 
 This is the experimental tool for bit-mapping, we only focus on optimising the mapping speed, since the speed of data reading and writing is effected by the manner of implementation. For example:
 
-> hash code length:107
-  read dim:125
-  total reads:2000000
-  Parse Fastq File Finished(6.31085 seconds)
-  Loading Spherical Hashing Finished (0.000178 seconds)
-  Total Hashing Time: (13.544875 seconds)
- [Building BooPHF]  100  %   elapsed:   0 min 1  sec   remaining:   0 min 0  sec
-  Computing Hashcode Of Ref Kmer Using BBhash Finished (1.118350 seconds)
-  Analysis of read region ...
-  Analysis Finished(1.25309 seconds)
-  Load Suffix Array Finished (5.880918 seconds)
-  Load Suffix Array Region Finished (8.534228 seconds)
-  Loading Reference Code Time: (22.036242 seconds)
-  Resizing Ref Hashcode Finished: (176.343352 seconds)
-  Total Mapping Time: (22.877301 seconds)
-  Load Ref Info Finished (9.036697 seconds)
-  Load Code Bucket Info Finished (21.639003 seconds)
-  Analyse Results Finished (3.275507 seconds)
-  Merge Result Finished (2.416870 seconds)
-  both  hamming distances are larger than 10:4313
-  half mapping:70315
-  total reads:2000000
-  Parse Fastq File Finished(10.7545 seconds)
-  Generate SAM File Finished (42.518203 seconds)
-  Total Running Time (355.328327 seconds
+> hash code length:107  
+  read dim:125  
+  total reads:2000000  
+  Parse Fastq File Finished(6.31085 seconds)  
+  Loading Spherical Hashing Finished (0.000178 seconds)  
+  Total Hashing Time: (13.544875 seconds)  
+ [Building BooPHF]  100  %   elapsed:   0 min 1  sec   remaining:   0 min 0  sec  
+  Computing Hashcode Of Ref Kmer Using BBhash Finished (1.118350 seconds)  
+  Analysis of read region ...  
+  Analysis Finished(1.25309 seconds)  
+  Load Suffix Array Finished (5.880918 seconds)  
+  Load Suffix Array Region Finished (8.534228 seconds)  
+  Loading Reference Code Time: (22.036242 seconds)  
+  Resizing Ref Hashcode Finished: (176.343352 seconds)  
+  Total Mapping Time: (22.877301 seconds)  
+  Load Ref Info Finished (9.036697 seconds)  
+  Load Code Bucket Info Finished (21.639003 seconds)  
+  Analyse Results Finished (3.275507 seconds)  
+  Merge Result Finished (2.416870 seconds)  
+  both  hamming distances are larger than 10:4313  
+  half mapping:70315  
+  total reads:2000000  
+  Parse Fastq File Finished(10.7545 seconds)  
+  Generate SAM File Finished (42.518203 seconds)  
+  Total Running Time (355.328327 seconds  
 
 This is the log when running bit-mapping, the crucial time of mapping process includes the total hashing time (line 6) and total mapping time (line 15). You can get the time of mapping process by summing the hashing time and the mapping time.
 
 ## Auther
 
 The bit-mapping algorithm is developed by Xueting Yu and Xuejun Liu. The experimental tool is mainly implemented by Xueting Yu.
+
