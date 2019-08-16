@@ -1,5 +1,5 @@
 # Bit-mapping
-This is a experimental tool for mapping RNA-seq reads to reference transcriptome implemented by C++ in Linux.
+This is an experimental tool for mapping RNA-seq reads to reference transcriptome implemented by C++ in Linux.
 
 ## Introduction
 
@@ -43,14 +43,14 @@ There are several important parameters in bit-mapping:
 To build the index of the reference transcriptome, please run the following command:
 > bmap index -r ref.fa -c max_code_len
 
-The max_code_len is the maximum length of hash code length of reference transcriptome, which is specified by users. Its value is 128 bits in our example index data.When building the index of the reference, users have to specify the maximum length of the hash code. Once the index is produced, it can be used to other datasets with the same settings. Note that the given length of the hash codes cannot exceed that of the index, or you should re-produce the index for longer length. Please make sure the index folder is under your current working directory.
+The max_code_len is the maximum length of hash code length of reference transcriptome, which is specified by users. Its value is 128 bits in our example index data. When building the index of the reference, users have to specify the maximum length of the hash code. Once the index is produced, it can be used to other datasets with the same settings. Note that the given length of the hash codes cannot exceed that of the index, or you should re-produce the index for longer length. Please make sure the index folder is under your current working directory.
 
 To run the mapping phase, run the command as follows:
 
 >bmap mapping -c code_len -t tolerance -p thread_num -I read_1.fastq -i read_2.fastq -o res.sam
 
 This is the command for paired-end reads. read_1.fastq is the first mates of the paired-end reads, read_2.fastq is the second mates paired-end reads, and res.sam is the output sam file. code_len is the specified length of hash code of reads. For n bp reads, the maximum value of code_len is:
- 
+
 > n - length of region-searching part - length of skipping part - length of ignored part - length of k-mer + 1
 
 ## Simulated data
@@ -87,14 +87,14 @@ We only focus on optimising the mapping speed, since the speed of data reading a
   total reads:2000000  
   Parse Fastq File Finished(10.7545 seconds)  
   Generate SAM File Finished (42.518203 seconds)  
-  Total Running Time (355.328327 seconds  
+  Total Running Time (355.328327 seconds)  
 
 This is an example log when running bit-mapping. The crucial time of mapping process includes the total hashing time (line 6) and the total mapping time (line 15). You can get the time of mapping process by summing the hashing time and the mapping time.
 
-## Authers
+## Authors
 
 The bit-mapping algorithm is developed by Xueting Yu and Xuejun Liu. The software is mainly implemented by Xueting Yu.
 
 ## Contact information
 
-For any query, please contact Xueting yu via xt_yu@nuaa.edu.cn or Xuejun Liu via xuejun.liu@nuaa.edu.cn
+For any query, please contact Xueting yu via xt_yu@nuaa.edu.cn or Xuejun Liu via xuejun.liu@nuaa.edu.cn.
